@@ -1,35 +1,21 @@
 //=========== Variables ========
-const plusIcon = [...document.querySelectorAll(".plus-icon")];
-const minusIcon = [...document.querySelectorAll(".minus-icon")];
-console.log(minusIcon);
-const questionsText= [...document.querySelectorAll(".question-text")];
-//console.log(questionsText);
 
-//======== Add Event Listener ==========
-let numeroArray = 0;
+const btns = [...document.querySelectorAll(".question-btn")];
+
+//=========== Add Event Listener and functions ========
 
 
+btns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        //console.log(e.currentTarget);
+        const siblingElement = e.currentTarget.parentElement.parentElement;
 
+        siblingElement.classList.toggle("show-text");
 
-plusIcon.forEach(icon =>{
-    icon.addEventListener("click",()=>{
-        sacarTexto(numeroArray);
-        numeroArray++;
-    })
-})
-
-minusIcon.forEach(iconMinus =>{
-    iconMinus.addEventListener("click", ()=>{
-        cambiarIcono(numeroArray);
     })
 })
 
 
-const sacarTexto = function(elemento){
-    questionsText[numeroArray].style.display = "block";
 
-}
 
-const cambiarIcono = function(elemento){
-    elemento.style.display = "block";
-}
+
